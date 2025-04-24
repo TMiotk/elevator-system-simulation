@@ -36,7 +36,13 @@ const FloorControls = ({ floor, onCall }) => (
 );
 
 export default function App() {
-  const [elevators, setElevators] = useState(Array(ELEVATORS).fill({ current_floor: 0, id: 0, doors_open: false }));
+  const [elevators, setElevators] = useState(
+    Array.from({ length: ELEVATORS }, (_, i) => ({
+      current_floor: 0,
+      id: i,
+      doors_open: false,
+    }))
+  );
 
   useEffect(() => {
     const socket = new WebSocket('ws://localhost:3001');
