@@ -2,6 +2,46 @@
   text-align: center;
 }
 
+.elevator-box {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  transition: transform 1s ease-in-out; /* Smooth animation for movement */
+}
+
+.floor-buttons button {
+  padding: 5px 10px;
+  margin: 2px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.floor-buttons button:hover {
+  background-color: #0056b3;
+}
+
+.container {
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+.row {
+  border: 1px solid #ccc;
+  padding: 10px;
+  background-color: #f9f9f9;
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -35,4 +75,75 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.building {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 300px;
+  background-color: #f4f4f4;
+}
+
+.floor {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #ccc;
+  padding: 10px;
+  width: 100%;
+  position: relative;
+}
+
+.elevator {
+  width: 50px;
+  height: 50px;
+  background-color: #4caf50;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: move 1s ease-in-out;
+}
+
+@keyframes move {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+.elevator-controls {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.floor-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.floor-buttons button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.floor-buttons button:hover {
+  background-color: #0056b3;
 }
