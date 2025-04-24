@@ -107,3 +107,5 @@ server.listen(3001, () => {
   console.log('Backend running on http://localhost:3001');
 });
 simulationLoop();
+
+module.exports = { app, assignCall, selectFloor, STATE };
